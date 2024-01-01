@@ -8,6 +8,7 @@ opt.encoding = "utf8"
 opt.fileencoding = "utf8"
 
 opt.syntax = "on"
+opt.termguicolors = true
 
 opt.ignorecase = true
 opt.smartcase = true

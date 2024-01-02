@@ -3,7 +3,7 @@ return {
     version = "*",
     config = function()
         require("toggleterm").setup({
-            size = 10,
+            size = 6,
             open_mapping = [[<c-\>]],
             start_in_insert = true,
             persist_mode = true,

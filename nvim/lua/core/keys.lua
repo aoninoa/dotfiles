@@ -1,8 +1,8 @@
 local map = vim.keymap
 
-map.set('n', '<space>n', ':tabnew', {})
-map.set('n', '<space>q', ':tabclose', {})
-map.set('n', '<space>b', ':+tabnext', {})
-map.set('n', '<space>p', ':-tabnext', {})
+local opts = { silent = true }
 
+map.set('n', '<space>n', ':tabnew', opts)
+map.set('n', '<space>q', ':tabclose', opts)
+map.set('n', '<Leader>o', 'o<ESC>', opts)
 

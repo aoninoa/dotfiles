@@ -1,0 +1,20 @@
+import = [
+  "~/.config/alacritty/themes/themes/tokyo-night-storm.toml"
+]
+
+[shell]
+  program = "/usr/bin/bash"
+  args = ["-l", "-c", "tmux a -t default || tmux new -s default" ]
+
+[selection]
+  save_to_clipboard = true
+
+[window]
+  padding = { x = 5, y = 5 }
+  class = { instance =  "Alacritty", general = "Alacritty" }
+  opacity = 0.9
+
+[font]
+  normal = { family = "JetBrainsMonoNL Nerd Font Mono", style = "Regular" }
+  size = 15 
+  

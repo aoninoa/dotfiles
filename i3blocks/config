@@ -1,0 +1,21 @@
+[spotify]
+command=~/.config/i3blocks/playing.sh
+interval=1
+
+[cpu]
+command=~/.config/i3blocks/cpu_usage.sh
+interval=1
+
+[memory]
+label=MEM:
+command=free -h | awk 'match($0, /^Mem/){print $3 " / " $2}'
+interval=1
+
+[uptime]
+command=uptime | sed 's/.*up \([^,]*\),.*/\1/'
+interval=60
+
+[date]
+command=date +'%m/%d(%a) %H:%M'
+interval=1
+

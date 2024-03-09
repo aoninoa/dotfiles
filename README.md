@@ -9,7 +9,6 @@
 - python3-venv # for clang-format
 =======
 - python3-venv # for clang-format 
->>>>>>> 7e9f793e474e9bf37510c002ac7ee76b5b4220a0
 - rofi
 - fish
 - starship

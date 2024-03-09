@@ -1,0 +1,36 @@
+BasedOnStyle: llvm
+ColumnLimit: 80
+IndentWidth: 4
+
+AccessModifierOffset: -4
+EmptyLineBeforeAccessModifier: Always
+BreakConstructorInitializers: BeforeComma
+
+AlwaysBreakTemplateDeclarations: Yes
+Cpp11BracedListStyle: false
+
+PointerAlignment: Left
+ReferenceAlignment: Left
+
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortLambdasOnASingleLine: Empty
+AllowShortBlocksOnASingleLine: Empty
+
+SpaceAfterTemplateKeyword: false
+SpacesInSquareBrackets: true
+SpacesInParentheses: true
+SpacesInCStyleCastParentheses: true
+SpacesInAngles: true
+
+# BreakBeforeBraces: Custom
+# BraceWrapping:
+#   AfterEnum: true
+#   AfterStruct: true
+#   AfterClass: true
+#   AfterControlStatement: Never
+#   AfterFunction: true
+#   AfterNamespace: true
+#   AfterUnion: true
+#   BeforeCatch: true
+#   BeforeElse: true
+#   IndentBraces: false

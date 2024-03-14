@@ -1,19 +1,13 @@
 local cmd = vim.api.nvim_create_user_command
 local autocmd = vim.api.nvim_create_autocmd
 
--- edit a language depenedent config file like `Cargo.toml`
--- in workspace root
-cmd("Conf", function()
-	local ft = vim.bo.filetype
-	if ft == "rust" then
-		vim.cmd.e("Cargo.toml")
-	elseif ft == "c" or ft == "cpp" then
-		vim.cmd.e("Makefile")
-	elseif ft == "typescript" or ft == "javascript" then
-		vim.cmd.e("package.json")
-	else
-		error("Unimplemented Filetype: `" .. ft .. "`")
-	end
+cmd("WinCloseAnother", function ()
+    local cur_win = vim.api.nvim_get_current_win()
+    for _, value in ipairs(vim.api.nvim_list_wins()) do
+        if cur_win ~= value then
+            vim.api.nvim_win_close(value, false)
+        end
+    end
 end, {})
 
 local function split_string_by_white(str)
@@ -84,9 +78,32 @@ end, { nargs = "?" })
 -- auto commands --
 
 autocmd("TextYankPost", {
-	group = vim.api.nvim_create_augroup("highlight_yank", { clear = true }),
+	group = vim.api.nvim_create_augroup("text_yank_post", { clear = true }),
 	pattern = "*",
 	callback = function()
 		vim.highlight.on_yank({ higroup = "IncSearch" })
 	end,
 })
+
+vim.api.nvim_create_augroup("tab", { clear = true })
+
+autocmd("FileType", {
+    group = "tab",
+    pattern = "make",
+    callback = function()
+        vim.opt.shiftwidth = 4
+        vim.opt.tabstop = 4
+        vim.opt.expandtab = false
+    end,
+})
+
+autocmd("FileType", {
+    group = "tab",
+    pattern =  { "html", "css", "javascript", "typescript", "javascriptreact", "typescriptreact", "json", },
+    callback = function()
+        vim.opt.shiftwidth = 2
+        vim.opt.tabstop = 4
+        vim.opt.expandtab = true
+    end
+})
+

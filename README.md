@@ -1,36 +1,35 @@
+# setup environemnt
+```
+chmod +x ./setup.sh
+./setup.sh
+```
+
+## Setup Shell(when use bash as default shell)
+```
+cp -t ~/ ./.bashrc ./.bash_aliases
+```
+
 ## Requirements
 - i3blocks
 - tmux
 - nvim >=0.90
 - Alacritty
 - Git
-- npm latest # for nvim lsp 
-<<<<<<< HEAD
-- python3-venv # for clang-format
-=======
-- python3-venv # for clang-format 
+- npm latest
+- python3-venv
+- python3-venv
 - rofi
 - fish
 - starship
 
-## Install Fisher
-```
-curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
-```
-### Fish Plugins
+## Fish Plugins
 1. bass
 2. z
 3. ghq
 4. fzf
 
-## Set default shell
+## Set Default Shell(when use fish as default shell)
 ```
 sudo echo /usr/bin/fish >> /etc/shells
 sudo chsh -s /usr/bin/fish
 ```
-
-## Install tpm
-```
-mkdir -p ~/.tmux/plugins
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
- ```

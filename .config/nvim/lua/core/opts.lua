@@ -1,5 +1,11 @@
 local opt = vim.opt
 
+if vim.g.neovide then
+    vim.o.guifont = "NotoSansM_Nerd_Font_Mono:h14"
+end
+
+opt.hidden = true
+
 opt.splitright = true;
 opt.splitbelow = true;
 
@@ -14,8 +20,9 @@ opt.number = true
 opt.relativenumber = true
 opt.cursorline = true
 opt.cursorlineopt = "number"
-opt.colorcolumn = "80"
 opt.signcolumn = "yes"
+
+opt.colorcolumn = "80"
 
 opt.scrolloff = 4
 opt.clipboard = "unnamedplus"

@@ -14,13 +14,22 @@ map.set("n", "<S-Tab>", "<CMD>bprevious<CR>", opts)
 -- delete/wipeout buffer
 map.set("n", "<leader>z", "<CMD>DelBuf<CR>", opts)
 map.set("n", "<leader>w", "<CMD>bw<CR>", opts)
-map.set("n", "<leader>d", "<CMD>bp<bar>sp<bar>bn<bar>DelBuf<CR>", opts)
+map.set("n", "<leader>d", function()
+    if #vim.api.nvim_list_wins() == 1 then
+        vim.cmd("DelBuf")
+    else
+        vim.cmd("bp | sp | bn | DelBuf")
+    end
+end, opts)
 -- tab
 -- close
-map.set("n", "<leader>tz", "<CMD>tabc", opts);
+map.set("n", "<leader>tz", "<CMD>tabc", opts)
 -- file manager
 -- return from filemanger
 map.set("n", "<leader>r", "<CMD>Rex<CR>", opts)
+-- window
+-- close all windows except current window
+map.set("n", "<C-w>a", "<CMD>WinCloseAnother<CR>", opts)
 
 -- insert mode
 -- escape from insert mode

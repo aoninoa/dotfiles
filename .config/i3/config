@@ -75,9 +75,9 @@ bindsym $mod+F2 exec --no-startup-id brave-browser
 bindsym $mod+F3 exec --no-startup-id chromium
 
 # teke screenshots(maim)
-bindsym $mod+F4 exec --no-startup-id maim --noopengl --select "$HOME/img/screenshots/$(date '+%a-%b-%d-%Y-%H%M%S').png"
-bindsym $mod+F5 exec --no-startup-id maim --noopengl --window $(xdotool getactivewindow) "$HOME/img/screenshots/$(date '+%a-%b-%d-%Y-%H%M%S').png"
-bindsym $mod+F6 exec --no-startup-id maim --noopengl --geometry 1920x1080+1920+0 "$HOME/img/screenshots/$(date '+%a-%b-%d-%Y-%H%M%S').png"
+bindsym $mod+F4 exec --no-startup-id maim --noopengl --select "$HOME/Pictures/screenshots/$(date '+%a-%b-%d-%Y-%H%M%S').png"
+bindsym $mod+F5 exec --no-startup-id maim --noopengl --window $(xdotool getactivewindow) "$HOME/Pictures/screenshots/$(date '+%a-%b-%d-%Y-%H%M%S').png"
+bindsym $mod+F6 exec --no-startup-id maim --noopengl --geometry 1920x1080+1920+0 "$HOME/Pictures/screenshots/$(date '+%a-%b-%d-%Y-%H%M%S').png"
 
 # start launcher (a program launcher)
 # bindsym $mod+d exec --no-startup-id rofi -show drun,run drun -show-icons 

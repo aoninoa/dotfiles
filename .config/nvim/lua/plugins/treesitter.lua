@@ -20,8 +20,6 @@ return {
                 "json",
                 "html",
                 "css",
-                "scss",
-                "nasm",
                 "go",
                 "markdown",
                 "markdown_inline",

@@ -17,10 +17,10 @@ cp -t ~/ ./.bashrc ./.bash_aliases
 - Git
 - npm latest
 - python3-venv
-- python3-venv
 - rofi
 - fish
 - starship
+- playerctl
 
 ## Fish Plugins
 1. bass

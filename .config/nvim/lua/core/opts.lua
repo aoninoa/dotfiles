@@ -1,10 +1,9 @@
 local opt = vim.opt
 
-if vim.g.neovide then
-    vim.o.guifont = "NotoSansM_Nerd_Font_Mono:h14"
-end
+opt.autochdir = true
 
 opt.hidden = true
+opt.autowrite = true
 
 opt.splitright = true;
 opt.splitbelow = true;
@@ -44,4 +43,3 @@ opt.expandtab = true
 opt.shiftwidth = 4
 opt.softtabstop = 4
 opt.tabstop = 4
-

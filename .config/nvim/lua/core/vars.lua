@@ -11,4 +11,3 @@ g.netrw_sizestyle = "H"
 g.netrw_keepdir = 0
 g.netrw_chgwin = vim.fn.winnr()
 g.netrw_special_syntax = 3
-g.netrw_winsize = 50

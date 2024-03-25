@@ -6,6 +6,7 @@ return {
     config = function()
         require("nvim-treesitter.configs").setup({
             ensure_installed = {
+                "comment",
                 "lua",
                 "c",
                 "cpp",
@@ -29,6 +30,8 @@ return {
                 "pascal",
                 "perl",
                 "ruby",
+                "astro",
+                "bash",
             },
             endwise = { enable = true },
             highlight = { enable = true },

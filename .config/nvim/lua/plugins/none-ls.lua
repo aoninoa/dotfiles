@@ -1,5 +1,8 @@
 return {
     lazy = true,
+    dependencies = {
+        "nvim-lua/plenary.nvim"
+    },
     keys = {
         { "<leader>gf", "n" }
     },
@@ -13,7 +16,6 @@ return {
 
                 -- TS JS
                 null_ls.builtins.formatting.prettier,
-                null_ls.builtins.diagnostics.eslint_d,
 
                 -- C C++
                 null_ls.builtins.formatting.clang_format,
@@ -24,7 +26,7 @@ return {
 
                 -- python
                 null_ls.builtins.formatting.black,
-                null_ls.builtins.diagnostics.ruff,
+                -- null_ls.builtins.diagnostics.ruff,
             }
         })
         vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})

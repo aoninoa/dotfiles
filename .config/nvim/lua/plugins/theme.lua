@@ -1,8 +1,18 @@
 return {
     {
+        "RRethy/base16-nvim",
+        lazy = false,
+        priority = 1000,
+        enabled = true,
+        config = function()
+            vim.cmd("colorscheme base16-ia-dark")
+        end
+    },
+    {
         "navarasu/onedark.nvim",
         lazy = false,
         priority = 1000,
+        enabled = false,
         config = function()
             local onedark = require("onedark")
             onedark.setup({
@@ -18,23 +28,4 @@ return {
             onedark.load()
         end,
     },
-    {
-        "ellisonleao/gruvbox.nvim",
-        priority = 1000,
-        enabled = false,
-        config = function()
-            local gruv = require("gruvbox")
-            gruv.setup({
-                bold = false,
-                italic = {
-                    strings = false,
-                    emphasis = false,
-                    comments = false,
-                    operators = false,
-                    folds = false,
-                },
-            })
-            gruv.load()
-        end,
-    }
 }

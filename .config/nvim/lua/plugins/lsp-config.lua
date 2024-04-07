@@ -12,9 +12,10 @@ return {
                 ensure_installed = {
                     "lua_ls",
                     "clangd",
+                    "pyright",
+                    "elixirls",
                     "rust_analyzer",
                     "tsserver",
-                    "pyright",
                     "gopls",
                     "zls",
                     "cmake",
@@ -58,7 +59,7 @@ return {
             })
 
             -- from
-            -- https://github.com/neovim/nvim-lspconfig#suggested-configuration
+            -- "https://github.com/neovim/nvim-lspconfig#suggested-configuration"
             vim.api.nvim_create_autocmd("LspAttach", {
                 group = vim.api.nvim_create_augroup("UserLspConfig", {}),
                 callback = function(ev)
@@ -130,7 +131,7 @@ return {
                     )
                     vim.keymap.set(
                         "n",
-                        "<leader>f",
+                        "<leader>x",
                         vim.diagnostic.open_float,
                         opts
                     )
@@ -161,15 +162,11 @@ return {
                 capabilities = lsp_capabilities,
             })
 
-            lspconfig["gopls"].setup({
-                capabilities = lsp_capabilities,
-            })
-
-            lspconfig["zls"].setup({
-                capabilities = lsp_capabilities,
-            })
-
             lspconfig["cmake"].setup({
+                capabilities = lsp_capabilities,
+            })
+
+            lspconfig["elixirls"].setup({
                 capabilities = lsp_capabilities,
             })
         end,

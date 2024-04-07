@@ -1,4 +1,4 @@
-return  {
+return {
     "aserowy/tmux.nvim",
     lazy = true,
     keys = {
@@ -21,4 +21,3 @@ return  {
         vim.keymap.set('n', "<C-l>", tmux_nav.move_right)
     end
 }
-

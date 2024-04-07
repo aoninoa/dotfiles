@@ -5,6 +5,7 @@ return {
         priority = 1000,
         enabled = true,
         config = function()
+            require("base16-colorscheme")
             vim.cmd("colorscheme base16-ia-dark")
         end
     },

@@ -84,6 +84,8 @@ end, {
 })
 --]]
 
+cmd("CopyBufferPath", "let @+ = expand('%:p')", {})
+
 cmd("WinCloseAnother", function()
     local cur_win = vim.api.nvim_get_current_win()
     for _, value in ipairs(vim.api.nvim_list_wins()) do

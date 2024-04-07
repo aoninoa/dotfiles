@@ -1,6 +1,8 @@
 local opt = vim.opt
 
-opt.autochdir = true
+opt.langmenu = "en_US"
+
+-- opt.autochdir = true
 
 opt.hidden = true
 opt.autowrite = true
@@ -9,12 +11,13 @@ opt.splitright = true;
 opt.splitbelow = true;
 
 opt.foldmethod = "manual"
-opt.shell = "/usr/bin/bash"
+opt.shell = "powershell"
 
 opt.showmode = false
-opt.mouse = "a"
-opt.autoindent = true
 
+opt.mouse = "a"
+
+opt.autoindent = true
 opt.number = true
 opt.relativenumber = true
 opt.cursorline = true

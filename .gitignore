@@ -1,1 +1,6 @@
 .config/wezterm/check_update
+auto-save-list
+eln-cache
+elpa
+elpaca
+network-security.data

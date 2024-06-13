@@ -1,8 +1,10 @@
 local opt = vim.opt
 
+opt.wildignorecase = true
+
 opt.langmenu = "en_US"
 
--- opt.autochdir = true
+-- opt.guicursor = "n-v-c-i:block"
 
 opt.hidden = true
 opt.autowrite = true
@@ -11,7 +13,7 @@ opt.splitright = true;
 opt.splitbelow = true;
 
 opt.foldmethod = "manual"
-opt.shell = "powershell"
+opt.shell = "/usr/bin/bash"
 
 opt.showmode = false
 

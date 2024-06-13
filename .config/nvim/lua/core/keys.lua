@@ -8,16 +8,16 @@ map.set({ "n", "i" }, "<C-Space>", "<Nop>", opts)
 
 -- normal mode
 -- insert new line without entering insert mode
-map.set("n", "<Leader>o", "o<ESC>", opts)
-map.set("n", "<leader>O", "O<ESC>", opts)
+-- map.set("n", "<Leader>o", "o<ESC>", opts)
+-- map.set("n", "<leader>O", "O<ESC>", opts)
 
 -- disable highlihgt
 map.set("n", "<leader>h", "<CMD>noh<CR>", opts)
 
 -- buffer
 -- toggle buffer
-map.set("n", "<Tab>", "<CMD>bnext<CR>", opts)
-map.set("n", "<S-Tab>", "<CMD>bprevious<CR>", opts)
+-- map.set("n", "<Tab>", "<CMD>bnext<CR>", opts)
+-- map.set("n", "<S-Tab>", "<CMD>bprevious<CR>", opts)
 -- delete/wipeout buffer
 map.set("n", "<leader>z", "<CMD>DelBuf<CR>", opts)
 map.set("n", "<leader>w", "<CMD>bw<CR>", opts)

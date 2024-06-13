@@ -11,8 +11,11 @@ return {
         end
 
         require("nvim-tree").setup({
+            git = {
+                enable = false,
+            },
             view = {
-                width = 40,
+                width = 30,
             },
             renderer = {
                 highlight_bookmarks = "name",
@@ -22,9 +25,9 @@ return {
                     quit_on_open = true
                 }
             },
-            filters = {
-                dotfiles = true,
-            },
+            -- filters = {
+            --     dotfiles = true,
+            -- },
             on_attach = on_attach,
         })
 

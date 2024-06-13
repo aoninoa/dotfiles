@@ -25,10 +25,10 @@ return {
                     fileds = { "menu", "abbr", "kind" },
                     format = function(entry, item)
                         local menu_icon = {
-                            nvim_lsp = "λ",
-                            luasnip = "⋗",
-                            buffer = "Ω",
-                            path = "🖫",
+                            nvim_lsp = "LSP",
+                            luasnip = "SNIP",
+                            buffer = "BUF",
+                            path = "PATH",
                         }
 
                         item.menu = menu_icon[entry.source.name]

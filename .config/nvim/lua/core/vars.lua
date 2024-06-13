@@ -3,6 +3,9 @@ g.t_co = 256
 g.background = "dark"
 
 -- file explorer
+-- disable netrw
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
 g.netrw_liststyle = 1
 g.netrw_banner = 0
 g.netrw_preview = 1

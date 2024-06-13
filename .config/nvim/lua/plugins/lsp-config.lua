@@ -131,7 +131,7 @@ return {
                     )
                     vim.keymap.set(
                         "n",
-                        "<leader>x",
+                        "<leader>xx",
                         vim.diagnostic.open_float,
                         opts
                     )
@@ -147,6 +147,7 @@ return {
                 cmd = {
                     "clangd",
                     "--offset-encoding=utf-16",
+                    "-header-insertion=never",
                 },
             })
 
@@ -166,7 +167,15 @@ return {
                 capabilities = lsp_capabilities,
             })
 
+            lspconfig["gopls"].setup({
+                capabilities = lsp_capabilities,
+            })
+
             lspconfig["elixirls"].setup({
+                capabilities = lsp_capabilities,
+            })
+
+            lspconfig["zls"].setup({
                 capabilities = lsp_capabilities,
             })
         end,

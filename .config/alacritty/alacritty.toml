@@ -1,9 +1,5 @@
-import = [
-  "~/.config/alacritty/themes/themes/onedark.toml"
-]
-
 [shell]
-  program = "/usr/bin/fish"
+  program = "/usr/bin/bash"
   args = ["-l", "-c", "tmux a -t sky || tmux new -s sky" ]
 
 [selection]
@@ -15,7 +11,7 @@ import = [
   opacity = 1
 
 [font]
-  normal = { family = "NotoSansM Nerd Font Mono", style = "Regular" }
+  normal = { family = "Geist Mono", style = "Regular" }
   size = 14
 
 [keyboard]

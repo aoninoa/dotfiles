@@ -1,14 +1,3 @@
-# setup environemnt
-```
-chmod +x ./setup.sh
-./setup.sh
-```
-
-## Setup Shell(when use bash as default shell)
-```
-cp -t ~/ ./.bashrc ./.bash_aliases
-```
-
 ## Requirements
 - i3blocks
 - tmux

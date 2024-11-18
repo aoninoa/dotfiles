@@ -1,30 +1,69 @@
-;;; package.el
-(require 'package)
-;; add melpa
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-;; MELPA-stable
-(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
-;; Marmalade
-(add-to-list 'package-archives  '("marmalade" . "https://marmalade-repo.org/packages/"))
-;; Org
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
-;; initialize
-(package-initialize)
+(setq package-enable-at-startup nil)
 
-(load-theme 'base16-da-one-gray)
-(require 'xclip)
-(custom-set-variablesp
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   '("f4868f17f7c5f4ec9c9a5d7341856c1307c768e13211e8197d4f4793debe7ffd" "0c860c4fe9df8cff6484c54d2ae263f19d935e4ff57019999edbda9c7eda50b8" default))
- '(package-selected-packages
-   '(base16-theme zenburn-theme xclip use-package rust-mode compat color-theme-sanityinc-tomorrow atom-one-dark-theme)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+(setq inhibit-startup-message t)
+
+(add-to-list 'default-frame-alist '(font . "Noto Sans Mono 14"))
+
+(menu-bar-mode -1)
+(scroll-bar-mode -1)
+(tool-bar-mode -1)
+(show-paren-mode 1)
+
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
+
+(global-display-line-numbers-mode)
+(setq display-line-numbers-type 'relative)
+
+(setq make-backup-files nil)
+
+(global-set-key (kbd "C-h") 'delete-backward-char)
+
+(set-message-beep 'silent)
+
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq c-basic-offset 4)
+ 
+;; download package manager
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name
+        "straight/repos/straight.el/bootstrap.el"
+        (or (bound-and-true-p straight-base-dir)
+            user-emacs-directory)))
+      (bootstrap-version 7))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
+
+;; theme
+(straight-use-package 'base16-theme)
+(use-package base16-theme
+  :straight t
+  :ensure t
+  :config
+  (load-theme 'base16-default-dark t))
+
+(straight-use-package 'smex)
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; This is your old M-x.
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
+;; move around the region
+(straight-use-package 'move-text)
+(global-set-key (kbd "M-p") 'move-text-up)
+(global-set-key (kbd "M-n") 'move-text-down)
+
+;; multiple cursors
+(straight-use-package 'multiple-cursors)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+
+(straight-use-package 'typescript-mode)

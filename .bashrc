@@ -114,6 +114,3 @@ fi
 
 # source /opt/alacritty/extra/completions//alacritty.bash
 
-if [ -x "$(command -v neofetch)" ]; then
-    neofetch
-fi

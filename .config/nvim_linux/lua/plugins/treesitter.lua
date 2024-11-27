@@ -1,5 +1,6 @@
 return {
     "nvim-treesitter/nvim-treesitter",
+    commit = "c11d49c",
     build = function()
         vim.cmd("TSUpdate")
     end,
@@ -30,14 +31,10 @@ return {
                 "markdown_inline",
                 "commonlisp",
                 "zig",
-                "haskell",
-                "pascal",
-                "perl",
-                "ruby",
                 "bash",
-                "nim",
-                "glsl",
+                "prisma",
             },
+            auto_install = true,
             endwise = { enable = true },
             highlight = { enable = true },
             indent = { enable = true },

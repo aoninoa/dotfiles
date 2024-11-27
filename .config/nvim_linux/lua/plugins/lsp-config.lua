@@ -17,6 +17,8 @@ return {
                     "zls",
                     "gopls",
                     "ts_ls",
+                    "prismals",
+                    "cmake",
                 },
             })
         end,
@@ -55,6 +57,7 @@ return {
             vim.diagnostic.config({
                 float = { border = _border },
             })
+
 
             -- from
             -- "https://github.com/neovim/nvim-lspconfig#suggested-configuration"
@@ -184,6 +187,14 @@ return {
             })
 
             lspconfig["ts_ls"].setup({
+                capabilities = lsp_capabilities,
+            })
+
+            lspconfig["prismals"].setup({
+                capabilities = lsp_capabilities,
+            })
+
+            lspconfig["cmake"].setup({
                 capabilities = lsp_capabilities,
             })
         end,
